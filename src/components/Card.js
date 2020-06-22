@@ -1,6 +1,4 @@
-import React, { useContext } from 'react';
-import MarketContext from '../utils/MarketContext';
- 
+import React from 'react';
 
 const Card = (props) => {
     // const markets = useContext(MarketContext);

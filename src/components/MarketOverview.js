@@ -1,28 +1,29 @@
 import React, { useContext } from 'react';
 import Card from './Card';
-import MarketContext from '../utils/MarketContext';
+import Search from './Search';
+import { useStoreContext } from '../utils/GlobalState';
 
 
 const MarketOverview = () => {
-    const markets = useContext(MarketContext);
+    const [state, dispatch] = useStoreContext();
+
+    dispatch();
 
     return (
-        <MarketContext.Provider value={markets}>
         <div>
             <div className="row">
             {
-                markets.marketList.map((market, index) => {
+                state.marketList.map((item, index) => {
                     return (
                     <div className="col-sm-4" key={index}>
-                        <Card name={market} id={index} />
+                        <Card name={item} id={index} />
                     </div>
                     )
                 })
             }
             </div>
+            <Search />
         </div>
-        </MarketContext.Provider>
-
     );
 };
 

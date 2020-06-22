@@ -1,0 +1,1 @@
+export const GET_SYMBOLS = "GET_SYMBOLS";
