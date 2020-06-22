@@ -27,6 +27,10 @@ const Search = () => {
             })
             .catch(err => console.log(err));
         };
+
+        const clearStockSearch = () => {
+            document.getElementById('stockSearch').value = '';
+        }
       
     useEffect(() => {
         getSymbols();
@@ -35,10 +39,11 @@ const Search = () => {
     
     return (
         <div className="row mt-4">
-            <div className="col-lg-6 col-md-10 offset-lg-3 offset-md-1">
+            <div className="col-lg-8 col-md-10 offset-lg-2 offset-md-1">
                 <div className="input-group mb-3">
                     <input list="availableStocks" type="text" className="form-control" id="stockSearch" placeholder="Search for stock prices" />
                     <div className="input-group-append">
+                        <button className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={() => {clearStockSearch()}}>Clear</button>
                         <button className="btn btn-outline-secondary" type="button" id="button-addon2">Search Stocks</button>
                     </div>
                 </div>
