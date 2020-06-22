@@ -1,32 +1,11 @@
-import React, { useEffect } from 'react';
-import { useStoreContext } from '../utils/GlobalState';
-import API from '../utils/API';
-import { ADD_SYMBOLS } from '../utils/actions';
+import React from 'react';
 
-function DataList() {
-    const [state, dispatch] = useStoreContext();
-
-    const getSymbols = () => {
-        // get all symbols for stocks
-        API.getSymbols()
-            .then(results => {
-            dispatch({
-                type: ADD_SYMBOLS,
-                symbols: results.data,
-            });
-            })
-            .catch(err => console.log(err));
-        };
-      
-    useEffect(() => {
-        getSymbols();
-    });
-
+function DataList(props) {
         return (
             <datalist id="availableStocks">
             {
-                state.autoFillSymbols.map((item, index) =>  {
-                return <option key={index} value={item} />
+                props.symbols.map((item, index) =>  {
+                return <option key={index} value={`${item.description} - ${item.symbol}`} data-symbol={item.symbol}/>
             })
             }
             </datalist>

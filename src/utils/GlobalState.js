@@ -11,7 +11,7 @@ const reducer = (state, action) => {
     case ADD_SYMBOLS:
       return {
         ...state,
-        autoFillSymbols: [action.symbols, ...state.autoFillSymbols],
+        autoFillSymbols: [...action.symbols, ...state.autoFillSymbols]
       };
 
   default:
@@ -26,10 +26,7 @@ const StoreProvider = ({ value = [], ...props }) => {
         'Dow Jones',
         'Nasdaq',
     ],
-    autoFillSymbols: [
-      'Edge',
-      'Chrome'
-    ],
+    autoFillSymbols: [],
     watchList: [],
     portfolio: [],
   });

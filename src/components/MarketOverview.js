@@ -9,7 +9,7 @@ const MarketOverview = () => {
 
     return (
         <div>
-            <div className="row">
+            <div className="row pb-4">
             {
                 state.marketList.map((item, index) => {
                     return (
