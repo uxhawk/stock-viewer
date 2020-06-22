@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useContext } from "react";
 import {
-  GET_SYMBOLS
+  ADD_SYMBOLS
 } from "./actions";
 
 const StoreContext = createContext();
@@ -8,11 +8,12 @@ const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
   switch (action) {
-  case GET_SYMBOLS:
-    return {
-      ...state,
-      autoFillSymbols: [], 
-    };
+    case ADD_SYMBOLS:
+      return {
+        ...state,
+        currentPost: action.post,
+        loading: false
+      };
 
   default:
     return state;
@@ -26,7 +27,10 @@ const StoreProvider = ({ value = [], ...props }) => {
         'Dow Jones',
         'Nasdaq',
     ],
-    autoFillSymbols: [],
+    autoFillSymbols: [
+      'Edge',
+      'Chrome'
+    ],
     watchList: [],
     portfolio: [],
   });

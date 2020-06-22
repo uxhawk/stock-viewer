@@ -9,11 +9,11 @@ function App() {
     <div>
       <StoreProvider>
         <Nav />
-        <div className="row">
-          <div className="col-md-8 offset-md-2 mt-4">
-          <MarketOveriew />
+          <div className="row">
+            <div className="col-md-8 offset-md-2 mt-4">
+            <MarketOveriew />
+            </div>
           </div>
-        </div>
       </StoreProvider>
 
     </div>

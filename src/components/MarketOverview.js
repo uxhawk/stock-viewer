@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Card from './Card';
 import Search from './Search';
 import { useStoreContext } from '../utils/GlobalState';

@@ -1,1 +1,1 @@
-export const GET_SYMBOLS = "GET_SYMBOLS";
+export const ADD_SYMBOLS = "ADD_SYMBOLS";
