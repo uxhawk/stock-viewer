@@ -10,7 +10,6 @@ function DataList() {
         // get all symbols for stocks
         API.getSymbols()
             .then(results => {
-            console.log(results);
             dispatch({
                 type: ADD_SYMBOLS,
                 symbols: results.data,
@@ -22,8 +21,6 @@ function DataList() {
     useEffect(() => {
         getSymbols();
     });
-
-    console.log(state.autoFillSymbols);
 
         return (
             <datalist id="availableStocks">

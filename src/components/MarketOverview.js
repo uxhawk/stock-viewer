@@ -5,9 +5,7 @@ import { useStoreContext } from '../utils/GlobalState';
 
 
 const MarketOverview = () => {
-    const [state, dispatch] = useStoreContext();
-
-    dispatch();
+    const [state] = useStoreContext();
 
     return (
         <div>

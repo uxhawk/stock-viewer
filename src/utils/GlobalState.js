@@ -7,12 +7,11 @@ const StoreContext = createContext();
 const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
-  switch (action) {
+  switch (action.type) {
     case ADD_SYMBOLS:
       return {
         ...state,
-        currentPost: action.post,
-        loading: false
+        autoFillSymbols: [action.symbols, ...state.autoFillSymbols],
       };
 
   default:
