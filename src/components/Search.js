@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import DataList from './DataList';
+import WatchList from './WatchList';
 import API from '../utils/API';
 import { useStoreContext } from '../utils/GlobalState';
 import { ADD_SYMBOLS } from '../utils/actions';
@@ -38,7 +39,7 @@ const Search = () => {
     }, []);
     
     return (
-        <div className="row mt-4">
+        <div className="row pb-4">
             <div className="col-lg-8 col-md-10 offset-lg-2 offset-md-1">
                 <div className="input-group mb-3">
                     <input list="availableStocks" type="text" className="form-control" id="stockSearch" placeholder="Search for stock prices" />

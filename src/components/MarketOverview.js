@@ -8,19 +8,20 @@ const MarketOverview = () => {
     const [state] = useStoreContext();
 
     return (
-        <div>
-            <div className="row pb-4">
-            {
-                state.marketList.map((item, index) => {
-                    return (
-                    <div className="col-sm-4" key={index}>
-                        <Card state={state.marketList[index]} id={index}/>
-                    </div>
-                    )
-                })
-            }
+        <div className="row container-fluid m-0 pb-4">
+            <div className="col-md-10 offset-md-1 mt-4">
+                <div className="row">
+                    {
+                        state.marketList.map((item, index) => {
+                            return (
+                            <div className="col-sm-4" key={index}>
+                                <Card state={state.marketList[index]} id={index}/>
+                            </div>
+                            )
+                        })
+                    }
+                </div>
             </div>
-            <Search />
         </div>
     );
 };
