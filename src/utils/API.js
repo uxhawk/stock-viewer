@@ -16,4 +16,8 @@ export default {
     getMutualFundSymbols: function() {
       return axios.get('https://finnhub.io/api/v1/stock/symbol?exchange=mutualFund&token=bpul0uvrh5rd45tk1jrg');
     },
+
+    getIndexPrices: async function(index) {
+      return axios.get(`https://finnhub.io/api/v1/quote?symbol=^${index}&token=bpul0uvrh5rd45tk1jrg`);
+    }
   };

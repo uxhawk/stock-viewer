@@ -14,7 +14,7 @@ const MarketOverview = () => {
                 state.marketList.map((item, index) => {
                     return (
                     <div className="col-sm-4" key={index}>
-                        <Card name={item.name} id={index} lastUpdate={item.lastUpdate}/>
+                        <Card state={state.marketList[index]} id={index}/>
                     </div>
                     )
                 })

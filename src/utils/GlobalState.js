@@ -21,6 +21,9 @@ const reducer = (state, action) => {
             [action.index]: {
               lastUpdate: {
                 $set: new Date(Date.now()).toLocaleString(),
+              },
+              currentPrice: {
+                $set: action.currentPrice,
               }
             }
           }
@@ -36,17 +39,20 @@ const StoreProvider = ({ value = [], ...props }) => {
     marketList: [
       {
         name: 'S&P 500',
-        currentPrice: 0,
+        symbol: 'GSPC',
+        currentPrice: 10,
         lastUpdate: new Date(Date.now()).toLocaleString(),
       },
       {
         name: 'Dow Jones',
-        currentPrice: 0,
+        symbol: 'DJI',
+        currentPrice: 20,
         lastUpdate: new Date(Date.now()).toLocaleString(),
       },
       {
         name: 'Nasdaq',
-        currentPrice: 0,
+        symbol: 'IXIC',
+        currentPrice: 30,
         lastUpdate: new Date(Date.now()).toLocaleString(),
       },
 
